@@ -12,30 +12,31 @@
           <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
               <div class="booking-form">
                   <h3>Register</h3>
-                  <form action="#">
+
+                  <form (ngSubmit)="registerUser()">
                     <div class="check-date">
                       <label for="date-in">Firstname</label>
-                      <input type="text" class="form-input" id="Firstname">
+                      <input type="text"  class="form-input" name="Firstname" id="Firstname" [(ngModel)]="registerUserData.firstname" requared >
 
                   </div>
                   <div class="check-date">
                     <label for="date-in">Lastname</label>
-                    <input type="text" class="form-input" id="Lastname">
+                    <input type="text" class="form-input" name="Lastname" id="Lastname" [(ngModel)]="registerUserData.lastname">
 
                 </div>
 
                       <div class="check-date">
                           <label for="date-in">Gmail</label>
-                          <input type="email" class="form-input" id="Email">
+                          <input type="email" class="form-input" name="email"  id="email" [(ngModel)]="registerUserData.email">
 
                       </div>
                       <div class="check-date">
                           <label for="date-out">Password</label>
-                          <input type="Password" class="form-input" id="Password">
+                          <input type="Password" class="form-input" name="Password" id="Password" [(ngModel)]="registerUserData.password">
                       </div>
                       <div class="check-date">
                         <label for="date-out">Confermer Password</label>
-                        <input type="Password" class="form-input" id="password_confirmation">
+                        <input type="Password" class="form-input" name="password_confirmation" id="password_confirmation" [(ngModel)]="registerUserData.password_confirmation">
                     </div>
                       <div class="text-warning">
 
