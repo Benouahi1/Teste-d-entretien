@@ -12,6 +12,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { RegisterService } from 'service/register/register.service';
 import { RoomComponent } from './room/room.component';
 import { ErourComponent } from './erour/erour.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ErourComponent } from './erour/erour.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-
+   NgxPaginationModule
 
   ],
   providers: [RegisterService],

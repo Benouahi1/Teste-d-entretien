@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../../service/register/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ registerUserData = {
   password_confirmation : ''
 };
 
-constructor(private _register: RegisterService){}
+constructor(private _register: RegisterService,private router:Router){}
 ngOnInit(){
 }
 
@@ -27,8 +28,10 @@ registerUser(){
   console.log(this.registerUserData)
   this._register.registerUser(this.registerUserData)
   .subscribe(
-    res => console.log(res),
-    err => console.log(err)
+    () => {
+      console.log("User is logged in");
+      this.router.navigateByUrl('/Login');
+    }
   )
 
 }
