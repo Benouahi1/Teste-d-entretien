@@ -8,8 +8,8 @@
         <th>Type</th>
         <th>Rating</th>
         <th>Price</th>
+        <th> Detailles</th>
         <th>Reserve</th>
-        <th>Detailles</th>
       </tr>
     </thead>
     <tbody>
@@ -30,8 +30,14 @@
         <td>{{ ROOM.type }}</td>
         <td>{{ ROOM.rating}}</td>
         <td>{{ ROOM.price}} DH</td>
-        <td> <button mat-button color="primary">Primary</button></td>
-        <td><button mat-stroked-button class="warn">Detalles</button></td>
+        <td> <button type="button" routerLink="/Detalles/{{ROOM.id}}"
+          class="btn btn-sm btn-clean  btn-success  btn_table_show"
+
+matTooltip="Detalles">Detalles Reserve</button></td>
+<td> <button type="button" routerLink="/Reserver/{{ROOM.id}}"
+  class="btn btn-sm btn-clean  btn-clean  btn_table_show"
+
+matTooltip="Detalles">Reserve</button></td>
       </tr>
     </tbody>
   </table>

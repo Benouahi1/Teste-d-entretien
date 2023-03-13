@@ -1,5 +1,5 @@
 import {OnInit , Component} from '@angular/core';
-import { RoomService } from 'service/listroom/room.service';
+import { RoomService } from 'src/service/listroom/room.service';
 
 @Component({
   selector: 'app-room',
@@ -17,7 +17,7 @@ export class RoomComponent implements OnInit {
     this.fetchRooms();
   }
   fetchRooms(): void {
-    this.RoomService.getAllPosts()
+    this.RoomService.getAllRoom()
     .subscribe((response) => {
         this.ROOMS = response.data;
         console.log( response.data);

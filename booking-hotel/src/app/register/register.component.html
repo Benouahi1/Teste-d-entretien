@@ -9,36 +9,58 @@
                   <a href="#" class="primary-btn">Discover Now</a>
               </div>
           </div>
-          <div class="col-xl-7  offset-lg-1">
+          <div class="col-xl-6  offset-lg-1">
               <div class="booking-form">
+                
+                <div *ngIf="" class="toast" role="alert" aria-live="assertive" aria-atomic="false">
+                  <div class="toast-header">
+                    <img src="..." class="rounded mr-2" alt="...">
+                    <strong class="mr-auto">Bootstrap</strong>
+                    <small>11 mins ago</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                      <span aria-hidden="false">&times;</span>
+                    </button>
+                  </div>
+                  <div class="toast-body">
+                    Hello, world! This is a toast message.
+                  </div>
+                </div>
+
+
+              <div *ngIf="errors">
+                <div *ngFor="let error of errors" class="p-2 mb-2 bg-danger text-white">
+                      {{error}}
+                </div>
+              </div>
+
                   <h3>Register</h3>
 
                   <form (ngSubmit)="registerUser()">
                     <div class="row">
                     <div class="check-date col-lg-6">
                       <label for="date-in">Firstname</label>
-                      <input type="text"  class="form-input" name="Firstname" id="Firstname" [(ngModel)]="registerUserData.firstname" requared >
+                      <input type="text"  class="form-input" name="Firstname" id="Firstname" [(ngModel)]="registerUserData.firstname" requared>
 
                   </div>
                   <div class="check-date col-lg-6">
                     <label for="date-in">Lastname</label>
-                    <input type="text" class="form-input" name="Lastname" id="Lastname" [(ngModel)]="registerUserData.lastname">
+                    <input type="text" class="form-input" name="Lastname" id="Lastname" [(ngModel)]="registerUserData.lastname" required>
 
                 </div>
               </div>
 
                       <div class="check-date">
                           <label for="date-in">Gmail</label>
-                          <input type="email" class="form-input" name="email"  id="email" [(ngModel)]="registerUserData.email">
+                          <input type="email" class="form-input" name="email"  id="email" [(ngModel)]="registerUserData.email" required>
 
                       </div>
                       <div class="check-date">
                           <label for="date-out">Password</label>
-                          <input type="Password" class="form-input" name="Password" id="Password" [(ngModel)]="registerUserData.password">
+                          <input type="Password" class="form-input" name="Password" minlength="9" id="Password" [(ngModel)]="registerUserData.password" required>
                       </div>
                       <div class="check-date">
                         <label for="date-out">Confermer Password</label>
-                        <input type="Password" class="form-input" name="password_confirmation" id="password_confirmation" [(ngModel)]="registerUserData.password_confirmation">
+                        <input type="Password" class="form-input" minlength="9" name="password_confirmation" id="password_confirmation" [(ngModel)]="registerUserData.password_confirmation" required>
                     </div>
                       <div class="text-warning">
 
@@ -46,7 +68,7 @@
                       </div>
 
 
-                      <button type="submit">Register</button>
+                      <button type="submit"  >Register</button>
                   </form>
               </div>
           </div>

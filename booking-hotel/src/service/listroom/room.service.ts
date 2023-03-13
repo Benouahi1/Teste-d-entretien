@@ -11,8 +11,11 @@ const endpoint = 'https://test-api.scdev.digital/api/rooms';
 })
 export class RoomService {
 
-  constructor(private http: HttpClient) {}
-  getAllPosts(): Observable<any> {
+  constructor(private http: HttpClient,) {}
+  getAllRoom(): Observable<any> {
     return this.http.get(endpoint);
   }
+
+
+
 }

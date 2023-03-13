@@ -1,0 +1,166 @@
+<!-- begin:: Content -->
+<div  class="kt-portlet portlet-1 col-md-12">
+	<div class="kt-portlet__head kt-bg-portlet-2">
+		<div class="kt-portlet__head-label">
+			&nbsp;
+			<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+				Detalles
+			</h2>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div  class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Hotelle
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>Name :</th>
+								<td class="donnee_show">{{ROOM.hotel.name}}</td>
+							</tr>
+
+							<tr>
+								<th>adress :</th>
+								<td class="donnee_show">{{ROOM.hotel.address}}</td>
+							</tr>
+							<tr>
+								<th>
+									Phone  :
+								</th>
+								<td class="donnee_show">{{ROOM.hotel.phone}}</td>
+							</tr>
+
+							<tr>
+								<th>
+									Rating
+									:
+								</th>
+								<td class="donnee_show">{{ROOM.hotel.rating}}</td>
+							</tr>
+							<tr>
+								<th>
+									Create  :
+								</th>
+								<td class="donnee_show">{{ROOM.hotel.created_at.split('T')[0]}}</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div  class="kt-portlet portlet-1 col-md-5">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Option
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div  class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+              <tr *ngFor="let option of options ,index as i" >
+                <th>{{i+1}}</th>
+                <td>{{option}}</td>
+              </tr>
+
+
+
+
+
+
+
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- END DETAILS ASSOCIATION -->
+		</div>
+	</div>
+</div>
+
+<div class="row col-md-12 justify-content-center">
+	<div  class="kt-portlet portlet-1 col-md-10 w-full">
+		<div class="kt-portlet__head kt-bg-portlet-2">
+			<div class="kt-portlet__head-label">
+				&nbsp;
+				<h2 class="kt-portlet__head-title kt-font-inverse-brand">
+					Detaille
+				</h2>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+
+			<!-- END DETAILS ASSOCIATION -->
+		</div>
+	</div>
+		<div class="kt-portlet__body">
+			<div class="row">
+				<div *ngIf="" class="espace_bloc"></div>
+				<div class="col-md-12 show_port">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th>
+									name :
+								</th>
+								<td class="donnee_show">{{this.ROOM.name}}</td>
+							</tr>
+							<tr>
+								<th>
+									created:
+								</th>
+								<td class="donnee_show">{{this.ROOM.created_at.split('T')[0]}}</td>
+							</tr>
+							<tr>
+								<th>
+									rating:
+								</th>
+								<td class="donnee_show">{{this.ROOM.rating}}</td>
+							</tr>
+							<tr>
+								<th>price :</th>
+								<td class="donnee_show">{{this.ROOM.price}} DH</td>
+							</tr>
+              <tr>
+								<th>type :</th>
+								<td class="donnee_show">{{this.ROOM.type}}</td>
+							</tr>
+              <tr>
+								<th>type :</th>
+								<td class="donnee_show">{{this.ROOM.description}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="espace_bloc"></div>
+<!-- end:: Content -->

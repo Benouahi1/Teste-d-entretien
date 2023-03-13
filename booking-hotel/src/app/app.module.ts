@@ -9,10 +9,19 @@ import { NavbarComponent } from './home/Nav/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './home/footer/footer.component';
-import { RegisterService } from 'service/register/register.service';
+import { RegisterService } from 'src/service/register/register.service';
 import { RoomComponent } from './room/room.component';
 import { ErourComponent } from './erour/erour.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DetallesRoomComponent } from './detalles-room/detalles-room.component';
+import { LoginService } from 'src/service/login/login.service';
+import { ReservationComponent } from './reservation/reservation.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenAccessInterceptor } from './interceptors/token.interceptors';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -23,17 +32,28 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RegisterComponent,
     FooterComponent,
     RoomComponent,
-    ErourComponent
+    ErourComponent,
+    DetallesRoomComponent,
+    ReservationComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-   NgxPaginationModule
+   NgxPaginationModule,
+	BrowserAnimationsModule,
+	ToastrModule.forRoot()
 
   ],
-  providers: [RegisterService],
+  providers: [RegisterService,LoginService,
+    {
+      provide: HTTP_INTERCEPTORS,
+    useClass: TokenAccessInterceptor,
+    multi: true
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

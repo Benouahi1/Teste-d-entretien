@@ -93,11 +93,12 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li class="active"><a href="">Home</a></li>
-                                    <li><a href="/Room">Rooms</a></li>
-                                    <li><a href="/Login">Login</a></li>
-                                    <li><a href="/Register">Register</a></li>
-                                </ul>
+                                    <li class="active"><a href="/Home">Home</a></li>
+                                    <li *ngIf="tok" ><a href="/Room">Rooms</a></li>
+                                    <li *ngIf="!tok"><a href="/Login">Login</a></li>
+                                    <li *ngIf="!tok"><a href="/Register">Register</a></li>
+                                    <li *ngIf="tok" ><a href="" (click)="supremer()">Logout</a></li>
+                                  </ul>
                             </nav>
                             <div class="nav-right search-switch">
                                 <i class="icon_search"></i>
